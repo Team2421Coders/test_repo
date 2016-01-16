@@ -1,12 +1,13 @@
 import java.util.*;
 import java.security.*;
 
+//this program is retarded
 public class HelloWorldRetarded
 {
    static ArrayList<String> list = new ArrayList<String>();
    static String hello = "";
    public static void main(String[] args)
-   {   
+   {   /*
       String alpha = "QWERTYUIOPASDFGHJKLZXCVBNM";
       
       while (alpha.length() > 0)
@@ -24,7 +25,7 @@ public class HelloWorldRetarded
          }
          catch (Exception e) {}
       }
-      
+      */
       String h = "H";
       String e = "E";
       String l = "L";
