@@ -1,0 +1,72 @@
+import java.util.*;
+import java.security.*;
+
+public class HelloWorldRetarded
+{
+   static ArrayList<String> list = new ArrayList<String>();
+   static String hello = "";
+   public static void main(String[] args)
+   {   
+      String alpha = "QWERTYUIOPASDFGHJKLZXCVBNM";
+      
+      while (alpha.length() > 0)
+      {
+         try
+         {
+            int random = (int)(Math.random() * alpha.length());
+            String text = alpha.substring(random, random + 1);
+            alpha = alpha.replace(text, "");
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(text.getBytes("UTF-8")); // Change this to "UTF-16" if needed
+            byte[] digest = md.digest();
+            String str = String.format("%064x", new java.math.BigInteger(1, digest));
+            list.add(str);
+         }
+         catch (Exception e) {}
+      }
+      
+      String h = "H";
+      String e = "E";
+      String l = "L";
+      String o = "O";
+      String w = "W";
+      String r = "R";
+      String d = "D";
+      
+      out(h);
+      out(e);
+      out(l);
+      out(l);
+      out(o);
+      out(w);
+      out(o);
+      out(r);
+      out(l);
+      out(d);
+      System.out.println(hello.substring(0,5) + " " + hello.substring(5));
+   }
+   
+   public static void out(String str1)
+   {
+      try
+      {
+         MessageDigest md = MessageDigest.getInstance("SHA-256");
+         md.update(str1.getBytes("UTF-8")); // Change this to "UTF-16" if needed
+         byte[] digest = md.digest();
+         String str = String.format("%064x", new java.math.BigInteger(1, digest));
+         
+         
+         while (true)
+         {
+            int random = (int)(Math.random() * list.size());
+            System.out.println(list.get(random));
+            if (list.get(random).equals(str))
+            {
+               hello += str1;
+               return;
+            }
+         }
+      }
+      catch (Exception e) {}
+   }
+}
